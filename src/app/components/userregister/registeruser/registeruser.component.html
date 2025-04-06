@@ -1,0 +1,34 @@
+<div class="Containerlogo">
+  <div class="logo">
+    <img src="./assets/global/pawprint.png" alt="" id="pawprint" />
+
+    <div class="containerNewWash">
+      <div class="NewWash">
+        <input type="text" class="coloums" placeholder="Your Name" [(ngModel)]="name" (keypress)="allowOnlyLetters($event)" />
+    
+        <select class="coloums" [(ngModel)]="carType">
+          <option value="" disabled selected>Select Car Type</option>
+          <option value="Hatchback">Hatchback</option>
+          <option value="Suv">Suv</option>
+          <option value="Sedan">Sedan</option>
+          <option value="Van">Van</option>
+        </select>
+    
+        <select class="coloums" [(ngModel)]="carBrand">
+          <option value="" disabled selected>Select Car Brand</option>
+          <option value="toyota">Toyota</option>
+          <option value="volkswagen">Volkswagen</option>
+          <option value="honda">Honda</option>
+          <option value="ford">Ford</option>
+          <option value="bmw">BMW</option>
+        </select>
+    
+        <input type="text" class="coloums" placeholder="Model (e.g., Polo)" [(ngModel)]="model" />
+        <input type="text" class="coloums" placeholder="Color" [(ngModel)]="color" (keypress)="allowOnlyLetters($event)" />
+        <input type="text" class="coloums" placeholder="Cell Number" [(ngModel)]="cellnumber" (keypress)="allowOnlyDigits($event)" />
+        <input type="text" class="coloums" placeholder="Number Plate" [(ngModel)]="numberPlate" />
+    
+        <input type="button" value="Register" id="Register" (click)="registerUser()" />
+      </div>
+    </div>
+    

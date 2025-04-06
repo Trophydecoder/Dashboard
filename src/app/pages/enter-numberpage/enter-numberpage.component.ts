@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { UserinfoComponent } from "../../components/Userfound/userinfo/userinfo.component";
 
 @Component({
   selector: 'app-enter-numberpage',
-  imports: [],
+  imports: [UserinfoComponent],
   templateUrl: './enter-numberpage.component.html',
   styleUrl: './enter-numberpage.component.scss'
 })

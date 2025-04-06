@@ -1,15 +1,25 @@
-<div class="Containerlogo"  *ngIf="logoandbuttons">
+<div class="Containerlogo" [ngStyle]="{ 'display': buttons ? 'flex' : 'none' }">
     <div class="logo">
     <img src="./assets/global/pawprint.png" alt="" id="pawprint">
     <div class="buttons">
         <input type="button" value="New wash" id="NewWash" (click)="showModal()">
         <input type="button" value="Collection" id="NewWash">
     </div>
-</div>
-<div class="ContainerModal" *ngIf="modal">
-    <div class="Modal">    
-    <img src="./assets/global/pawprint.png" alt="" id="pawprint">
-        <h1>Enter Cell number</h1>
-        <input type="text" alt="" placeholder="Enter Cell number"  id="Cellno">
-        <input type="button" value="Submit" id="NewWash" (click)="closeModal()">
     </div>
+</div>
+
+
+
+
+<div class="Containerlogo" [ngStyle]="{ 'display': Modal ? 'flex' : 'none' }">
+    <div class="logo">    
+    <img src="./assets/global/pawprint.png" alt="" id="pawprint">
+    <div class="input">
+        <input type="text" alt="" placeholder="Enter Cell number"  id="Cellno"[(ngModel)]="cellnumber" (keypress)="allowOnlyNumbers($event)"
+        maxlength="10">
+        <input type="button" value= "Submit" id="submit" (click)="closeModal()"> 
+    </div>
+      
+    </div>
+    </div>
+    

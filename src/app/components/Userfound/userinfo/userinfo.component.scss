@@ -1,0 +1,190 @@
+.Containerlogo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-image : url('/assets/home/Mobilehomepage.png');
+    background-repeat : no-repeat;
+    background-size: cover;
+    height: 100vh;
+
+}
+.logo{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+#pawprint{
+    width: 80%;
+    padding-top: 5%;
+    
+}
+
+.user-profile {
+    margin-top: 2%;
+    width: 80%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+  }
+
+  .profile-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+
+  .label {
+    font-weight: bold;
+    width: 40%;
+  }
+
+  .value {
+    color: #555;
+    width: 60%;
+    text-align: right;
+  }
+
+ 
+  .ContainerCarwash{
+    margin-top: 10%;
+    width: 100%;
+    align-items: center;
+   justify-content: center;;
+    display: flex;
+    
+  }
+  .Carwash{
+    width: 100%;
+    align-items: center;
+   justify-content: center;;
+    display: flex;
+    flex-direction: column;
+
+  }
+  .wash-button{
+     background-color:var(--textcolors);
+     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    color:var(--bg-colors);
+    border: none;
+    padding: 17px 100px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 8px 2px;
+    cursor: pointer;
+    border-radius: 9px;
+  }
+  .wash-button.active {
+    background-color: dodgerblue;
+    color: white;
+  }
+  .Containerpay{
+    width: 100%;
+  }
+  .pay{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .pay p{
+    color: #555;
+    font-size: 15px;
+  }
+  #check{
+    font-size: 30px;
+  }
+  .submitcontainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #submit{
+    background-color:black;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+   color:var(--textcolors);
+   border: none;
+   padding: 17px 100px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 20px;
+   margin: 8px 2px;
+   cursor: pointer;
+   border-radius: 9px;
+  }
+
+  @media screen and (min-width: 1024px){
+
+    .Containerlogo{
+        background-image : url('/assets/home/Desktophomepage.png');
+    }
+    .logo{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: end;
+    }
+   
+    #pawprint{
+        width: 30%;
+        padding-top: 5%;
+        
+    }
+    .user-profile {
+      margin-top: -5%;
+      width: 30%;
+    }
+    .ContainerCarwash{
+      margin-top: 3%;
+      width: 100%;
+    }
+    .Carwash{
+      width: 70%;
+     
+      align-items: center;
+     justify-content:space-evenly;;
+      display: flex;
+      flex-direction: row;
+  
+    }
+    .wash-button{
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+     padding: 17px 40px;
+   }
+   .pay{
+    margin-top: 2%;
+    width: 100%;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    
+  }
+  .pay p{
+    padding: 2%;
+    color: #555;
+    font-size: 19px;
+  }
+  #submit{
+    background-color:black;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  
+   padding: 17px 50px; 
+  }
+  .submitcontainer{
+    margin-top: 2%;
+  }
+
+  }

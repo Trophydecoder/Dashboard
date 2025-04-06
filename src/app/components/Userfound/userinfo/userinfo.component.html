@@ -1,0 +1,56 @@
+<div class="Containerlogo">
+    <div class="logo">
+    <img src="./assets/global/pawprint.png" alt="" id="pawprint">
+      <div class="user-profile">
+        <div class="profile-row">
+          <div class="label">Name:</div>
+          <div class="value">{{user.name}}</div>
+        </div>
+        <div class="profile-row">
+            <div class="label">Car Type:</div>
+            <div class="value">{{user.type}}</div>
+          </div>
+        <div class="profile-row">
+          <div class="label">Car Brand:</div>
+          <div class="value">{{user.carBrand}}</div>
+        </div>
+        <div class="profile-row">
+          <div class="label">Model:</div>
+          <div class="value">{{user.model}}</div>
+        </div>
+        <div class="profile-row">
+          <div class="label">Color:</div>
+          <div class="value">{{user.color}}</div>
+        </div>
+        <div class="profile-row">
+          <div class="label">Cell Number:</div>
+          <div class="value">{{user.cellnumber}}</div>
+        </div>
+        <div class="profile-row">
+            <div class="label">Number Plate:</div>
+            <div class="value">{{user.numberplate}}</div>
+          </div>
+      </div>
+    </div>
+  <div class="ContainerCarwash">
+  <div class="Carwash">
+    <button 
+    *ngFor="let option of washOptions" 
+    (click)="selectOption(option)" 
+    [class.active]="selectedOption === option"
+    class="wash-button">
+    {{ option }}
+  </button>
+</div>
+  </div>
+<div class="Containerpay">
+  <div class="pay">
+    <p>Pay before wash : <input type="checkbox" alt="" id="check"></p>
+    <p>Pay on collection : <input type="checkbox" alt="" id="check"></p>
+  </div>
+    <div class="submitcontainer">
+      <input type="submit" alt="" id="submit" value="Submit">
+    </div>
+
+  </div>
+</div>
