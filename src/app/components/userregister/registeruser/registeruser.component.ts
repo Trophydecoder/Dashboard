@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Users, usersList } from '../../../model/models';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-registeruser',
   imports: [CommonModule ,FormsModule],
@@ -12,7 +13,6 @@ export class RegisteruserComponent {
   name = '';
   carType = '';
   carBrand = '';
-  model = '';
   color = '';
   cellnumber = '';
   numberPlate = '';
@@ -30,41 +30,65 @@ export class RegisteruserComponent {
   }
 
   registerUser() {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+      }
+    });
+  
     if (
-      !this.name || !this.carType || !this.carBrand || !this.model ||
+      !this.name || !this.carType || !this.carBrand || 
       !this.color || !this.cellnumber || !this.numberPlate
     ) {
-      alert("Please fill in all fields.");
+      Toast.fire({
+        icon: "error",
+        title: "Please fill in all fields."
+      });
       return;
     }
-
+  
     if (this.cellnumber.length < 10) {
-      alert("Cell number must be at least 10 digits.");
+      Toast.fire({
+        icon: "error",
+        title: "Cell number must be at least 10 digits."
+      });
       return;
     }
-
-    const userExists = Users.find(Users => Users.cellnumber === this.cellnumber);
-
+  
+    const userExists = Users.find(user => user.cellnumber === this.cellnumber);
+  
     if (userExists) {
-      alert("User already exists.");
+      Toast.fire({
+        icon: "error",
+        title: "User already exists."
+      });
       return;
     }
-
+  
     const newUser: Users = {
       name: this.name,
       carType: this.carType,
       carBrand: this.carBrand,
-      model: this.model,
       color: this.color,
       cellnumber: this.cellnumber,
       numberPlate: this.numberPlate,
     };
-
+  
     usersList.push(newUser);
     console.log('Registered User:', newUser);
-    alert("User registered successfully!");
-
+  
+    Toast.fire({
+      icon: "success",
+      title: "User registered successfully!"
+    });
+  
     // Clear form
-    this.name = this.carType = this.carBrand = this.model = this.color = this.cellnumber = this.numberPlate = '';
+    this.name = this.carType = this.carBrand  = this.color = this.cellnumber = this.numberPlate = '';
   }
 }

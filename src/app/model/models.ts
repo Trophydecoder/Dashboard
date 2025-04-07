@@ -27,7 +27,6 @@ export interface Users {
   name: string;
   carType: string;
   carBrand: string;
-  model: string;
   color: string;
   cellnumber: string;
   numberPlate: string;

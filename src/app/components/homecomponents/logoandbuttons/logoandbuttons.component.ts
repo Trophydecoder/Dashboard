@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Users } from '../../../model/models';
 import { Router } from '@angular/router';
-
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-logoandbuttons',
@@ -20,50 +20,43 @@ export class LogoandbuttonsComponent {
   cellnumber: string = '';
 
 
+async showModal() {
+  const { value: cellnumber } = await Swal.fire({
+    title: "Enter Cell Number",
+    input: "text",
+    inputLabel: "Your Cell Number",
+    inputPlaceholder: "Enter a valid cell number",
+    inputAttributes: {
+      maxlength: "10",
+      pattern: "\\d*",
+      inputmode: "numeric"
+    },
+    showCancelButton: true
+  });
 
-  showModal(){
-    this.Modal = true; 
-    this.buttons = false;
-  }
+  if (cellnumber) {
+    const trimmedNumber = cellnumber.trim();
 
-
-  closeModal() {
-    console.log('closeModal triggered');
-  
-    const trimmedNumber = this.cellnumber.trim();
-    
-    if (!trimmedNumber) {
-      alert("Please enter a cell number");
-      return;
-    }
-  
     if (!/^\d+$/.test(trimmedNumber)) {
-      alert("Cell number must contain digits only");
+      Swal.fire("Error", "Cell number must contain digits only", "error");
       return;
     }
-  
+
     if (trimmedNumber.length < 10) {
-      alert("Cell number must be at least 10 digits");
+      Swal.fire("Error", "Cell number must be at least 10 digits", "error");
       return;
     }
-  
+
+    this.cellnumber = trimmedNumber;
     this.userExists = Users.find(user => user.cellnumber === trimmedNumber);
-  
+
     if (this.userExists) {
       console.log('User already exists');
-      // Navigating to userinfo page if number found in database model
-      this.router.navigate(['/user-info', this.cellnumber]);
+      this.router.navigate(['/user-info', trimmedNumber]);
     } else {
       console.log('Register user');
-      this.router.navigate(['/user-register', this.cellnumber]); 
+      this.router.navigate(['/user-register', trimmedNumber]);
     }
   }
-  
-  allowOnlyNumbers(event: KeyboardEvent) {
-    const charCode = event.key;
-  
-    if (!/^\d$/.test(charCode)) {
-      event.preventDefault();
-    }
-  }
-}  
+}
+}

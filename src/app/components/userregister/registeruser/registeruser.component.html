@@ -1,12 +1,13 @@
 <div class="Containerlogo">
   <div class="logo">
     <img src="./assets/global/pawprint.png" alt="" id="pawprint" />
-
+<div class="RegisterNewWash">
+  <p>Register  a <span>New Wash</span></p>
     <div class="containerNewWash">
       <div class="NewWash">
         <input type="text" class="coloums" placeholder="Your Name" [(ngModel)]="name" (keypress)="allowOnlyLetters($event)" />
     
-        <select class="coloums" [(ngModel)]="carType">
+        <select class="coloums2" [(ngModel)]="carType">
           <option value="" disabled selected>Select Car Type</option>
           <option value="Hatchback">Hatchback</option>
           <option value="Suv">Suv</option>
@@ -14,7 +15,7 @@
           <option value="Van">Van</option>
         </select>
     
-        <select class="coloums" [(ngModel)]="carBrand">
+        <select class="coloums2" [(ngModel)]="carBrand">
           <option value="" disabled selected>Select Car Brand</option>
           <option value="toyota">Toyota</option>
           <option value="volkswagen">Volkswagen</option>
@@ -22,13 +23,16 @@
           <option value="ford">Ford</option>
           <option value="bmw">BMW</option>
         </select>
-    
-        <input type="text" class="coloums" placeholder="Model (e.g., Polo)" [(ngModel)]="model" />
+  
         <input type="text" class="coloums" placeholder="Color" [(ngModel)]="color" (keypress)="allowOnlyLetters($event)" />
         <input type="text" class="coloums" placeholder="Cell Number" [(ngModel)]="cellnumber" (keypress)="allowOnlyDigits($event)" />
         <input type="text" class="coloums" placeholder="Number Plate" [(ngModel)]="numberPlate" />
-    
+    <div class="registerbtn"> 
+      <div class="btn">
         <input type="button" value="Register" id="Register" (click)="registerUser()" />
+      </div>
+    </div>
+       
       </div>
     </div>
     
