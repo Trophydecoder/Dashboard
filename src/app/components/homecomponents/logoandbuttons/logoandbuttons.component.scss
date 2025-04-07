@@ -21,9 +21,25 @@
     padding-top: 5%;
     
 }
+.heading{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.heading h1{
+        font-family: "Teko", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+    color: var(--textcolors);
+}
+.heading h1 span{
+    color: var(--bg-colors);
+}
 .buttons{
     width: 100%;
-    margin-top: 35%;
+    margin-top: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,7 +57,7 @@
     background-color: var(--bg-colors);
     color:var(--textcolors);
     border: none;
-    padding: 17px 50px;
+    padding: 17px 100px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
