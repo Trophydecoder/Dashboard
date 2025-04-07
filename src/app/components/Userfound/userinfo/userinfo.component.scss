@@ -1,12 +1,11 @@
 .Containerlogo{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    background-image : url('/assets/home/Mobilehomepage.png');
-    background-repeat : no-repeat;
-    background-size: cover;
-    height: 100vh;
-
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-image: url("/assets/home/Mobilehomepage.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
 }
 .logo{
     justify-content: center;
@@ -29,7 +28,7 @@
     border: 1px solid #ddd;
     border-radius: 10px;
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    background-color: #bebebe83;
   }
 
   .profile-row {
@@ -44,7 +43,7 @@
   }
 
   .value {
-    color: #555;
+    color: #b1b1b1;
     width: 60%;
     text-align: right;
   }
@@ -53,37 +52,48 @@
   .ContainerCarwash{
     margin-top: 10%;
     width: 100%;
+    background-color: #bebebe33;
     align-items: center;
    justify-content: center;;
     display: flex;
-    
+    flex-direction: row;
+
   }
   .Carwash{
-    width: 100%;
+    width: 25%;
     align-items: center;
    justify-content: center;;
     display: flex;
     flex-direction: column;
-
+    background-color:white;
+  
+    border-radius: 50%;
+   height: 12vh;
+   margin: 3%;
   }
-  .wash-button{
-     background-color:var(--textcolors);
-     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
-    color:var(--bg-colors);
-    border: none;
-    padding: 17px 100px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 20px;
-    margin: 8px 2px;
-    cursor: pointer;
-    border-radius: 9px;
+ 
+  #washtype{
+    width: 60%;
   }
-  .wash-button.active {
-    background-color: dodgerblue;
+  .Carwash p{
+    margin-top: -2%;
+    color: #555;
+  }
+  .Carwash.selected {
+    background-color: #2196f3;
+    color: white;
+    border-radius: 50%;
+  }
+  
+  .Carwash.selected p {
     color: white;
   }
+  
+  .Carwash {
+    transition: 0.3s ease;
+    cursor: pointer;
+  }
+  
   .Containerpay{
     width: 100%;
   }
@@ -109,7 +119,7 @@
     flex-direction: column;
   }
   #submit{
-    background-color:black;
+    background-color:var(--bg-colors);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
    color:var(--textcolors);
    border: none;
@@ -129,21 +139,21 @@
         background-image : url('/assets/home/Desktophomepage.png');
     }
     .logo{
-        width: 90%;
+        width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: end;
-        align-items: end;
+        justify-content: center;
+        align-items:center;
     }
    
     #pawprint{
-        width: 30%;
-        padding-top: 5%;
+        width: 20%;
+        padding-top: 0%;
         
     }
     .user-profile {
-      margin-top: -5%;
-      width: 30%;
+      margin-top: 0%;
+      width: 40%;
     }
     .ContainerCarwash{
       margin-top: 3%;
@@ -157,6 +167,26 @@
       display: flex;
       flex-direction: row;
   
+    }
+    .Carwash{
+      width: 7%;
+      align-items: center;
+     justify-content: center;;
+      display: flex;
+      flex-direction: column;
+      background-color:white;
+    
+      border-radius: 50%;
+     height: 14vh;
+     margin: 3%;
+    }
+   
+    #washtype{
+      width: 60%;
+    }
+    .Carwash p{
+      margin-top: -2%;
+      color: #555;
     }
     .wash-button{
       box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
@@ -178,7 +208,6 @@
     font-size: 19px;
   }
   #submit{
-    background-color:black;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
   
    padding: 17px 50px; 

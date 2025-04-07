@@ -14,8 +14,7 @@ export class UserinfoComponent {
 
   cellnumber: string = '';
   user: any;
-  washOptions = ['Fullwash', 'Exterior', 'Interior', 'Detailing'];
-  selectedOption: string | null = null;
+ 
 
   ngOnInit() {
     this.cellnumber = this.route.snapshot.paramMap.get('cellnumber') || '';
@@ -24,11 +23,17 @@ export class UserinfoComponent {
 
   constructor(private route: ActivatedRoute) {}
 
-
+  washTypes = [
+    { name: 'Fullwash', img: 'assets/userinfo/fullwash.png' },
+    { name: 'Exterior', img: 'assets/userinfo/exterior.png' },
+    { name: 'Interior', img: 'assets/userinfo/interior.png' }
+  ];
   
-  selectOption(option: string): void {
-    console.log('button pressed')
-    this.selectedOption = option;
+  selectedWashIndex: number | null = null;
+  
+  selectWashType(index: number) {
+    this.selectedWashIndex = index;
   }
+ 
 }
 

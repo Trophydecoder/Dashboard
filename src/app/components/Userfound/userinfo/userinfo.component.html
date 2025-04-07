@@ -32,25 +32,24 @@
           </div>
       </div>
     </div>
-  <div class="ContainerCarwash">
-  <div class="Carwash">
-    <button 
-    *ngFor="let option of washOptions" 
-    (click)="selectOption(option)" 
-    [class.active]="selectedOption === option"
-    class="wash-button">
-    {{ option }}
-  </button>
-</div>
-  </div>
-<div class="Containerpay">
+    <div class="ContainerCarwash">
+      <div
+        class="Carwash"
+        *ngFor="let wash of washTypes; let i = index"
+        [ngClass]="{ 'selected': selectedWashIndex === i }"
+        (click)="selectWashType(i)"
+      >
+        <img [src]="wash.img" alt="" id="washtype" />
+        <p>{{ wash.name }}</p>
+      </div>
+    </div>
+     </div>
+
+<div class="Containerpay"></div>
   <div class="pay">
-    <p>Pay before wash : <input type="checkbox" alt="" id="check"></p>
-    <p>Pay on collection : <input type="checkbox" alt="" id="check"></p>
+    <p>Pay before wash : <input type="radio" alt="" id="check"></p>
+    <p>Pay on collection : <input type="radio" alt="" id="check"></p>
   </div>
     <div class="submitcontainer">
       <input type="submit" alt="" id="submit" value="Submit">
     </div>
-
-  </div>
-</div>
